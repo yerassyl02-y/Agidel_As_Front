@@ -27,8 +27,8 @@ export default {
 
 
 <template>
-    <div class="header main-container">
-        <div class="header__container">
+    <div class="header">
+        <div class="header__container main-container">
             <nuxt-link to="/" class="header__logo">
                 <img src="@/assets/images/Header/Logo.png" />
             </nuxt-link>
