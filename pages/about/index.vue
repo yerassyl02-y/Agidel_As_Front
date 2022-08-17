@@ -21,7 +21,7 @@ export default {
 
 
 <template>
-    <main class="about main-container d-flex flex-column">
+    <main class="about main-container py d-flex flex-column">
         <bread-crumbs :links="links" />
         <h1>О компании</h1>
         <div class="about__content d-flex">
@@ -74,8 +74,6 @@ export default {
 
 <style lang="scss" scoped>
 .about {
-    padding: 35px 0 105px;
-
     h1 {
         font-family: "SerifPro-Bold";
         font-style: normal;

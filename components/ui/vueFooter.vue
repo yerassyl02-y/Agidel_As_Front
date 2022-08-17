@@ -19,6 +19,10 @@ export default {
                     title: "О компании",
                     url: "/about",
                 },
+                {
+                    title: "Контакты",
+                    url: "/contacts",
+                },
             ],
             links: [
                 {
@@ -179,6 +183,7 @@ export default {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        align-items: flex-end;
     }
     &__socials {
         display: flex;

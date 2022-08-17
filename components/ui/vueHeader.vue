@@ -2,6 +2,7 @@
 export default {
     data() {
         return {
+            activeIndex: null,
             nav: [
                 {
                     title: "наши услуги",
@@ -59,6 +60,9 @@ export default {
 
 
 <style lang="scss" scoped>
+.active {
+    color: red !important;
+}
 .header {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
     padding: 7px 0;
