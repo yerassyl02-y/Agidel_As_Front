@@ -5,6 +5,21 @@ export default {
             type: Object,
         },
     },
+    data() {
+        return {
+            type: "",
+        };
+    },
+    created() {
+        if (process.client) this.type = localStorage.getItem("type");
+    },
+    methods: {
+        goToInner(item) {
+            this.$router.push({
+                path: `/${this.type}/${item.id}`,
+            });
+        },
+    },
 };
 </script>
 
@@ -18,6 +33,7 @@ export default {
                 v-for="(item, index) in navbar.list"
                 :key="index"
                 class="navbar__item"
+                @click="goToInner(item)"
             >
                 <h4>{{ item.title }}</h4>
                 <div class="item-details">

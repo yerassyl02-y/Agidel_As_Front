@@ -24,6 +24,7 @@ export default {
                     created_at: "20/08/2021",
                     views: 20,
                     img: require("@/assets/images/Home/news/news_img1.png"),
+                    id: 1,
                 },
                 {
                     title: "Lorem Ipsum - это текст-'рыба'",
@@ -32,6 +33,7 @@ export default {
                     created_at: "20/08/2021",
                     views: 20,
                     img: require("@/assets/images/Home/news/news_img2.png"),
+                    id: 2,
                 },
                 {
                     title: "Lorem Ipsum - это текст-'рыба'",
@@ -40,6 +42,7 @@ export default {
                     created_at: "20/08/2021",
                     views: 20,
                     img: require("@/assets/images/Home/news/news_img3.png"),
+                    id: 3,
                 },
                 {
                     title: "Lorem Ipsum - это текст-'рыба'",
@@ -48,6 +51,7 @@ export default {
                     created_at: "20/08/2021",
                     views: 20,
                     img: require("@/assets/images/Home/news/news_img2.png"),
+                    id: 4,
                 },
                 {
                     title: "Lorem Ipsum - это текст-'рыба'",
@@ -56,9 +60,18 @@ export default {
                     created_at: "20/08/2021",
                     views: 20,
                     img: require("@/assets/images/Home/news/news_img3.png"),
+                    id: 5,
                 },
             ],
         };
+    },
+    methods: {
+        goToInner(item) {
+            if (process.client) localStorage.setItem("type", "news");
+            this.$router.push({
+                path: `/news/${item.id}`,
+            });
+        },
     },
 };
 </script>
@@ -81,6 +94,7 @@ export default {
                         v-for="(item, index) in news"
                         :key="index"
                         class="swiper-slide"
+                        @click.native="goToInner(item)"
                     >
                         <img :src="item.img" />
                         <div class="news__details">

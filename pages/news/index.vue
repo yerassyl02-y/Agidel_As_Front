@@ -88,8 +88,10 @@ export default {
             this.$router.push({
                 path: `/news/${item.id}`,
             });
-            if (process.client)
+            if (process.client) {
                 localStorage.setItem("news-detail", JSON.stringify(item));
+                localStorage.setItem("type", "news");
+            }
         },
     },
 };

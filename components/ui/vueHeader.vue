@@ -7,21 +7,30 @@ export default {
                 {
                     title: "наши услуги",
                     url: `/services`,
+                    type: "services",
                 },
                 {
                     title: "наши проекты",
                     url: "/projects",
+                    type: "projects",
                 },
                 {
                     title: "новости",
                     url: "/news",
+                    type: "news",
                 },
                 {
                     title: "О компании",
                     url: "/about",
+                    type: "",
                 },
             ],
         };
+    },
+    methods: {
+        goToInner(item) {
+            if (process.client) localStorage.setItem("type", item.type);
+        },
     },
 };
 </script>
@@ -38,6 +47,7 @@ export default {
                     v-for="(item, index) in nav"
                     :key="index"
                     :to="item.url"
+                    @click.native="goToInner(item)"
                 >
                     {{ item.title }}
                 </nuxt-link>
@@ -60,9 +70,6 @@ export default {
 
 
 <style lang="scss" scoped>
-.active {
-    color: red !important;
-}
 .header {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
     padding: 7px 0;

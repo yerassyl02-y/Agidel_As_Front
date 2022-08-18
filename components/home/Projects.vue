@@ -5,31 +5,45 @@ export default {
             projects: [
                 {
                     title: "Строительство сетей водоснабжения д/о «Мерекелик» г. Талдыкорган",
+                    id: 1,
                 },
                 {
                     title: "Энергоснабжение «Gate City» города-спутника в Алматинской области. Тепловые сети.",
+                    id: 2,
                 },
                 {
                     title: "Строительство сетей водопровода и канализации мкр. Кок-Кайнар (садоводческое общество «Радуга») г. Алматы",
+                    id: 3,
                 },
                 {
                     title: "Строительство систем водоснабжения и канализации микрорайона «Кокшокы» Бостандыкского района г. Алматы",
+                    id: 4,
                 },
                 {
                     title: "Водоснабжение и водоотведение Gate City города-спутника в Алматинской области.",
+                    id: 5,
                 },
             ],
             active_project: {
                 title: "",
+                id: null,
             },
         };
     },
     created() {
         this.active_project.title = this.projects[0].title;
+        this.active_project.id = this.projects[0].id;
     },
     methods: {
         setActiveItem(item) {
             this.active_project.title = item.title;
+            this.active_project.id = item.id;
+            if (process.client) localStorage.setItem("type", "project");
+        },
+        goToInner() {
+            this.$router.push({
+                path: `/projects/${this.active_project.id}`,
+            });
         },
     },
 };
@@ -61,7 +75,7 @@ export default {
                 взял гранку шрифта и перемешал ее, чтобы сделать книгу образцов
                 шрифтов.
             </p>
-            <button>Подробнее о проекте</button>
+            <button @click="goToInner()">Подробнее о проекте</button>
         </div>
     </div>
 </template>

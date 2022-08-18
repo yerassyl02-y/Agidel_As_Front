@@ -18,11 +18,10 @@
 .nav {
         display: flex;
         align-items: center;
-
-        a {
+        a{
+        margin-right: 35px;
             text-decoration: unset;
             cursor: pointer;
-            margin-right: 35px;
 
             font-family: "SerifPro-Regular";
             font-style: normal;
@@ -34,7 +33,7 @@
             color: #035aa6;
             &:last-of-type {
                 margin-right: 0;
-            }
+        }
         }
         &__link {
                 color: white !important;
