@@ -78,6 +78,8 @@ export default {
         cursor: pointer;
 
         img {
+            width: 89px;
+            height: 88px;
             object-fit: cover;
         }
     }
