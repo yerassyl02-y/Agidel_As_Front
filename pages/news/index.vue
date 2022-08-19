@@ -16,6 +16,7 @@ export default {
                     url: "/news",
                 },
             ],
+            data: [],
             news: [
                 {
                     title: "Lorem Ipsum - это текст-'рыба'",
@@ -84,6 +85,9 @@ export default {
         };
     },
     methods: {
+        async getNewsList() {
+            // this.data =
+        },
         goToInner(item) {
             this.$router.push({
                 path: `/news/${item.id}`,

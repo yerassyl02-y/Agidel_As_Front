@@ -35,8 +35,8 @@ export default {
                 class="navbar__item"
                 @click="goToInner(item)"
             >
-                <h4>{{ item.title }}</h4>
-                <div class="item-details">
+                <h4 v-html="item.title_text">{{ item.title_text }}</h4>
+                <div v-if="item.details" class="item-details">
                     <div class="d-flex align-center">
                         <svg width="14" height="14" class="mr-2">
                             <use
@@ -104,6 +104,9 @@ export default {
         cursor: pointer;
 
         h4 {
+            max-width: 300px;
+            width: 100%;
+            word-wrap: break-word;
             font-family: "SerifPro-Regular";
             font-style: normal;
             font-weight: 700;

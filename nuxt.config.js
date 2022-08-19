@@ -40,7 +40,26 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    "@nuxtjs/axios",
+    "@nuxtjs/i18n"
   ],
+  axios: {
+    baseURL: "https://agidelas-back.test-nomad.kz/api",
+  },
+  i18n: {
+    locales: ["ru", "en", "kz"],
+    defaultLocale: "ru",
+    vueI18nLoader: true,
+    vueI18n: {
+      fallbackLocale: "ru",
+      silentTranslationWarn: true,
+      silentFallbackWarn: true
+    },
+    detectBrowserLanguage: {
+      useCookie: true,
+      redirectOn: 'root',
+    }
+  },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
